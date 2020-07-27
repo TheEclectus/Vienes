@@ -1,0 +1,4 @@
+::			- Global
+::MMT			- MMTools namespace
+::Vienes		- Main namespace
+::Vienes::Crypto	- Cryptography

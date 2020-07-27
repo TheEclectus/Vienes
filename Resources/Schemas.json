@@ -1,0 +1,52 @@
+{
+  "Vienes Schemas (object names are all unique reference IDs)" : {
+    "buff" : {
+      "displayName" : "<string | display name>",
+      "type" : "<string | 'buff' or 'debuff'>",
+      "duration" : "<uint=0 | duration in seconds; 0 for item buff only (non-castable)>",
+      "statMods" : {
+        "str" :     "<int | strength; physical capabilities>",
+        "con" :     "<int | constitution; toughness>",
+        "agi" :     "<int | agility; speed>",
+        "int" :     "<int | intelligence; smarts>",
+        "maxHP" :   "<int | max HP>",
+        "maxMana" : "<int | max mana>"
+      }
+    },
+    "item" : {
+      "displayName" :    "<string | display name>",
+      "type" :    "<string | item type (e.g., item:weapon would be 'weapon')>",
+      "rarity" :  "<string | 'junk' (grey), 'common' (white), 'uncommon' (yellow), 'exotic' (green), 'rare' (blue), 'legendary' (red), or 'eldritch' (fluctuating purple)>",
+      "statMods" : {
+        "str" :     "<int | strength; physical capabilities>",
+        "con" :     "<int | constitution; toughness>",
+        "agi" :     "<int | agility; speed>",
+        "int" :     "<int | intelligence; smarts>",
+        "maxHP" :   "<int | max HP>",
+        "maxMana" : "<int | max mana>"
+      },
+      "buffs" : {
+        "pickup" : [
+          "<string[] | list of de/buff reference names that the player will have while the item is in their inventory>"
+        ]
+      }
+    },
+    "item:weapon" : {
+      "buffs" : {
+        "equip" : [
+          "<string[] | list of de/buff reference names that the player will have for the duration that the item is equipped>"
+        ]
+      },
+      "isTwoHanded" : "<bool | does the weapon need both hands to hold?>"
+    },
+    "item:armor" : {
+      "buffs" : {
+        "equip" : [
+          "<string[] | list of de/buff reference names that the player will have for the duration that the item is equipped>"
+        ]
+      },
+      "location" : "<string | 'head', 'neck', 'chest', 'back', 'hands', 'legs', or 'feet'>",
+      "armorVal" : "<int | armor value; (AV/10) == damage blocked"
+    }
+  }
+}
